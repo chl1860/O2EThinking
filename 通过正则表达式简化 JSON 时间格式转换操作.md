@@ -59,7 +59,7 @@ ok，替换函数的调用次数减少为了 1 次。既然都使用正则表达
 ```javascript
     /**
     * 1. 通过 /^\/Date\((\d+)\)\/$/ 判断时间格式同时提取整数
-    * 2. 摒弃了字符串截取和查找替换过程
+    * 2. 摒弃字符串截取和查找替换操作
     */
     function convertToDate(jsonDate){
         var ls = /^\/Date\((\d+)\)\/$/gi.exec(jsonDate);
