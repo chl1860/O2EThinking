@@ -97,6 +97,7 @@ public class SAP_Post
     /// <param name="iRfcGenerator">IRfcFuncGenerator</param>
     public SAP_Post(IRfcFuncGenerator iRfcGenerator)
     {
+        _iRfcGenerator = iRfcGenerator
     }
     
     /// <summary>
@@ -107,7 +108,7 @@ public class SAP_Post
     {
         try
         {
-            var rfcdestination = InitRfcDefination();
+            InitRfcDefination(); // 实例化 _rfcDefination
             var rfcFunc = _iRfcGenerator.GetRfcFunc(_rfcDefination.Repository);
             rfcFunc.Invoke(_rfcDefination);
             return rfcFunc;
@@ -139,7 +140,7 @@ public RfcGenerator:IRfcFuncGenerator{
 至此，便可以使用如下统一方式调用 RFC：
 
 ```csharp
-var sap_post = new SAP_Post(RfcGenerator);
+var sap_post = new SAP_Post(RfcGenerator); // 传入IRfcGenerator 实例化 SAP_Post
 var func = sap_post.InvokeRfc();
 ```
 以上便是整个 RFC 工厂调用的演进实现过程 
