@@ -124,8 +124,10 @@ IRfcGenerator 的接口实现实例如下：
 ```csharp
 public RfcGenerator:IRfcFuncGenerator{
     //..your property
-    public RfcGenerator(){
+    private string _rfcName；
+    public RfcGenerator(string rfcName){
         //...some assignment
+        _rfcName = rfcName;
     }
 
     public IRfcFunction GetRfcFunc(RfcRepository repo){
