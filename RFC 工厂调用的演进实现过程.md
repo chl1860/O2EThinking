@@ -145,4 +145,4 @@ public RfcGenerator:IRfcFuncGenerator{
 var sap_post = new SAP_Post(RfcGenerator); // 传入IRfcGenerator 实例化 SAP_Post
 var func = sap_post.InvokeRfc();
 ```
-以上便是整个 RFC 工厂调用的演进实现过程 
+以上便是整个 RFC 工厂调用的演进实现过程。至此，通过工厂方法，使得RFC 调用代码格式统一的同时，完成了对核心代码的复用，提高了代码的健壮性。 
