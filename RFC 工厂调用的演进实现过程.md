@@ -122,7 +122,7 @@ public class SAP_Post
 ```
 IRfcGenerator 的接口实现实例如下：
 ```csharp
-public RfcGenerator:IRfcFuncGenerator{
+public class RfcGenerator:IRfcFuncGenerator{
     //..your property
     private string _rfcName；
     public RfcGenerator(string rfcName){
